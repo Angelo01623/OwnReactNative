@@ -1,9 +1,13 @@
 {
+  "homepage": "https://Angelo01623.github.io/OwnReactNative",
   "name": "stickersmash",
   "version": "1.0.0",
   "main": "expo/AppEntry.js",
   "scripts": {
     "start": "expo start",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
+    "build": "react-scripts build",
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web"
@@ -16,7 +20,8 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-native": "^0.74.5",
-    "react-native-web": "~0.19.10"
+    "react-native-web": "~0.19.10",
+    "react-scripts": "^5.0.1"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
