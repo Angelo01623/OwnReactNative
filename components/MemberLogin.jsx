@@ -5,6 +5,15 @@ const MemberLogin = ({ navigation }) => {
   const [username, setUserName] = React.useState('');
   const [password, setPassword] = React.useState('');
 
+  const handleLogin = () => {
+    if (username === 'michael' && password === '123') {
+      console.log("Login Successful");
+      navigation.navigate('Dashboard');
+    } else {
+      Alert.alert('Invalid Credentials', 'Please enter a valid username and password.');
+    }
+  };
+
   return (
     <ImageBackground
       source={require('../assets/loginBackground.jpg')}  // Adjust the path to your background image
@@ -26,10 +35,7 @@ const MemberLogin = ({ navigation }) => {
         />
         <TouchableOpacity
           style={styles.button}
-          onPress={() => {
-            console.log("Login Pressed");
-            navigation.navigate('Dashboard');
-          }}
+          onPress={handleLogin}
         >
           <Text style={styles.buttonText}>Login</Text>
         </TouchableOpacity>
@@ -50,7 +56,8 @@ const MemberLogin = ({ navigation }) => {
         style={styles.btnRegister}  
         onPress={() => {
             console.log("Register Pressed");
-             navigation.navigate('Register');
+            //  navigation.navigate('Register');
+             navigation.navigate('Register', { username });
           }}
         >
           <Text style={styles.createAccountText}>Register</Text>

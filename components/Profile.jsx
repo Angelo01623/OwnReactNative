@@ -66,7 +66,20 @@ const Profile = () => {
       </Card.Content>
       </Card>
       </ScrollView>
-
+      <View style={{justifyContent: 'flex-end', position:"relative", alignItems:"flex-start", marginBottom:"5%"}}>
+              <TouchableOpacity
+              disabled={isLoading}
+              
+              onPress={() => {
+                navigation.navigate('login');
+              }}
+              >
+              <View style={{flexDirection:"row", gap:10}}>
+               <Ionicons name="log-out" size={30} color="#000" />
+              <Text style={{ color: "black", textAlign: 'center', fontSize: 25 }}>Logout</Text>
+              </View>
+              </TouchableOpacity>
+            </View>
 
 
     </View>
@@ -86,7 +99,7 @@ const Profile = () => {
         <TouchableOpacity onPress={openDrawer} style={styles.hamburgerIcon}>
           <Ionicons name="menu" size={30} color="#000" />
         </TouchableOpacity>
-        <Text style={[styles.paragraph, { color: 'black' }]}>
+        <Text style={[styles.paragraph,{ color: 'black' }]}>
          Profile
         </Text>
         {/* <Button title="Open drawer" onPress={openDrawer} /> */}

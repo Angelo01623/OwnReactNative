@@ -114,8 +114,9 @@ const styles = StyleSheet.create({
     marginTop: -5,
   },
   phoneInput: {
-    width: 335,
+    width: "85%",
     marginLeft: 10,
+
   },
   divider: {
     backgroundColor: '#000',

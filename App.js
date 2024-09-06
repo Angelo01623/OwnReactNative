@@ -20,7 +20,7 @@ export default function App() {
       <Stack.Navigator>
 
         <Stack.Screen
-          name=" "
+          name="login"
           component={MemberLogin}
           options={{ headerShown: false }}  
         />
@@ -28,6 +28,10 @@ export default function App() {
         <Stack.Screen
           name="Dashboard"
           component={Dashboard} 
+          options={{
+    headerShown: true,        // Keep the header visible
+    headerBackVisible: false, // Hide the back button
+  }} 
         />
       
       <Stack.Screen
