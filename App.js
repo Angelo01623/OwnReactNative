@@ -1,30 +1,59 @@
-import React, { useState} from 'react'; 
-import { StyleSheet, Text, View,
-  TouchableOpacity,Alert, Button} from 'react-native';
+import React, { useState } from 'react';
+import { StyleSheet, Text, View, TouchableOpacity, Alert, Button } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import MemberLogin from './components/MemberLogin';
+import Dashboard from './components/Dashboard';
+import MemberRegister from './components/MemberRegister';
+import Footer from './components/Footer';
+import Profile from './components/Profile';
+import MemberInfo from './components/MemberInfo';
+
+const Stack = createNativeStackNavigator();
 
 export default function App() {
+  const [name, setName] = useState("Michael Angelo");
+  console.log(name);
 
-  const [name, SetName] = useState("Michael Angelo");
-  console.log(name)
-  
   return (
-    <View style={styles.container}>
-      <Text style={{color:"black"}}>Open up {name}.js to start working on your app!</Text>
-      {/* <StatusBar style="auto" /> */}
-    <View style={{marginTop:24}}>
-    <Button 
-  
-                // Some properties given to Button 
-                title="Click Me"
-                onPress={() =>
-                 Alert.alert('Its GeeksforGeeks !')
-                //  asasdasadsadsads
-                 } 
-                 
-            /> 
-    </View>
-    </View>
-    
+    <NavigationContainer>
+      <Stack.Navigator>
+
+        <Stack.Screen
+          name=" "
+          component={MemberLogin}
+          options={{ headerShown: false }}  
+        />
+
+        <Stack.Screen
+          name="Dashboard"
+          component={Dashboard} 
+        />
+      
+      <Stack.Screen
+          name="Register"
+          component={MemberRegister}  
+        />
+
+        <Stack.Screen
+          name="Foot"
+          component={Footer}  
+        />
+
+      <Stack.Screen
+          name="Profile"
+          component={Profile}
+            options={{ headerShown: false }}
+        />
+
+      <Stack.Screen
+          name="Personal Information"
+          component={MemberInfo}
+            // options={{ headerShown: false }}
+        />
+
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 
@@ -34,6 +63,5 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
-    
   },
 });
